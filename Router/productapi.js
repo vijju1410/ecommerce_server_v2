@@ -24,7 +24,7 @@ router.post("/addProduct", upload.single("product_image"), async (req, res) => {
             product_price: req.body.product_price,
             product_category: req.body.product_category,  // Should match _id in category collection
             product_brand: req.body.product_brand,
-            product_image: req.file ? `http://localhost:5000/uploads/${req.file.filename}` : "",
+            product_image: req.file ? `https://ecommerce-server-v2.onrender.com/uploads/${req.file.filename}` : "",
         });
 
         const savedProduct = await newProduct.save();
