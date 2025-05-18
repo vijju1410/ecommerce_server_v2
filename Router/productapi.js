@@ -104,7 +104,7 @@ router.put("/editProduct/:id", upload.single("product_image"), async (req, res) 
         };
 
         if (req.file) {
-            updatedData.product_image = `http://localhost:5000/uploads/${req.file.filename}`;
+            updatedData.product_image = `https://ecommerce-server-v2.onrender.com/uploads/${req.file.filename}`;
         }
 
         const updatedProduct = await product.findByIdAndUpdate(req.params.id, updatedData, { new: true });
